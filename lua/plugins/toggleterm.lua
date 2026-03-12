@@ -4,15 +4,14 @@ return {
   config = function()
     require("toggleterm").setup({
       size = 15,
-      open_mapping = [[<C-t>]], -- Mit Strg+t öffnen/schließen
-      direction = 'horizontal', -- Unten öffnen
+      open_mapping = [[<C-t>]],
+      direction = 'horizontal',
       shade_terminals = true,
     })
 
-    -- Praktische Shortcuts für das Terminal-Fenster
     function _G.set_terminal_keymaps()
       local opts = {buffer = 0}
-      vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts) -- Esc beendet Schreibmodus im Term
+      vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
       vim.keymap.set('t', '<C-n>', [[<Cmd>wincmd h<CR>]], opts)
       vim.keymap.set('t', '<C-r>', [[<Cmd>wincmd j<CR>]], opts)
       vim.keymap.set('t', '<C-t>', [[<Cmd>wincmd k<CR>]], opts)
