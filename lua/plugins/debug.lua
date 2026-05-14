@@ -11,7 +11,7 @@ return {
     local dapui = require("dapui")
 
     require("mason-nvim-dap").setup({
-      ensure_installed = { "delve", "codelldb" }, 
+      ensure_installed = { "delve", "codelldb", "java-debug-adapter" },
     })
 
     dapui.setup()

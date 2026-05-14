@@ -9,7 +9,7 @@ return {
   {
     "williamboman/mason-lspconfig.nvim",
     opts = {
-      ensure_installed = { "lua_ls", "ts_ls", "pyright", "gopls" },
+      ensure_installed = { "lua_ls", "ts_ls", "pyright", "gopls", "jdtls" },
     },
   },
 
@@ -18,7 +18,7 @@ return {
     config = function()
       local lspconfig = require("lspconfig")
       local on_attach = function(client, bufnr)
-        local opts = { buffer = bufnr, remap = false }
+        local opts = { buffer = bufnr, remap = false}
         vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
         vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
         vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
