@@ -39,7 +39,13 @@ options = {
     lualine_a = { { 'mode', separator = { left = '' }, right_padding = 2 } },
     lualine_b = { 'filename', 'branch' },
     lualine_c = {
-      '%=', --[[ add your center components here in place of this comment ]]
+      '%=', function ()
+      	local reg = vim.fn.reg_recording()
+	if reg ~= "" then
+		return "Recording @" .. reg
+	end
+					return ""
+      end--[[ add your center components here in place of this comment ]]
     },
     lualine_x = {},
     lualine_y = { 'filetype', 'progress' },
