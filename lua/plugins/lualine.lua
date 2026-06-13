@@ -37,7 +37,7 @@ options = {
   },
   sections = {
     lualine_a = { { 'mode', separator = { left = '' }, right_padding = 2 } },
-    lualine_b = { 'filename', 'branch' },
+    lualine_b = { 'filename', 'branch', "diagnostics" },
     lualine_c = {
       '%=', function ()
       	local reg = vim.fn.reg_recording()

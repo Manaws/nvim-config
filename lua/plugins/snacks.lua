@@ -44,7 +44,7 @@ return {
     picker = {
       enabled = true,
       sources = {
-        explorer = { hidden = true },
+        explorer = { hidden = true, ignored = true },
       },
     },
     quickfile = { enabled = true },
